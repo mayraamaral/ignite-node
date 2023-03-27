@@ -17,8 +17,10 @@ const server = http.createServer((req, res) => {
       name: "Mayra",
       email: "mayra@mayra.dev",
     });
-    return res.end("Criação de usuários");
+    return res.writeHead(201).end();
   }
+
+  return res.writeHead(404).end("Não encontrado");
 });
 
 server.listen(3333);
